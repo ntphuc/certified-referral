@@ -66,3 +66,8 @@ Added after the main results had been seen, and labelled as such in the paper: t
 setting (tau = 0.5, alpha = 0.05), validity on the full test set, the i.i.d. simulation, the
 naive baseline, the oracle ceiling eta*, the ensemble scores, and the grid-floor and
 sensitivity analyses.
+
+## License
+
+Code: MIT (see `LICENSE`). The BRISC2025 and Kvasir-SEG images are not included and remain under
+their own terms; the per-image result files only list case identifiers, Dice and scores.
