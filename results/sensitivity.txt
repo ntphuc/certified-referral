@@ -1,0 +1,58 @@
+
+=== BRISC2025  (tau=0.5, alpha=0.05; mean over 3 seeds; 200 splits)
+variant                          w             dhat           mc_mi          ent_fg          oracle   max pop-viol
+base: delta=0.1, 50 pts, cal=0.5  4            0.63            0.84            0.24            0.94   0.020
+base: delta=0.1, 50 pts, cal=0.5 16            0.93            0.93            0.61            0.97   0.020
+base: delta=0.1, 50 pts, cal=0.5 64            0.95            0.92            0.54            0.97   0.035
+delta=0.05                        4            0.55            0.74            0.17            0.94   0.005
+delta=0.05                       16            0.90            0.89            0.48            0.96   0.000
+delta=0.05                       64            0.94            0.79            0.47            0.97   0.005
+grid 25 pts                       4            0.63            0.83            0.24            0.94   0.020
+grid 25 pts                      16            0.92            0.92            0.60            0.95   0.020
+grid 25 pts                      64            0.94            0.92            0.53            0.97   0.015
+grid 100 pts                      4            0.63            0.84            0.24            0.95   0.030
+grid 100 pts                     16            0.93            0.93            0.61            0.97   0.020
+grid 100 pts                     64            0.96            0.92            0.54            0.97   0.030
+cal=0.7 (larger)                  4            0.66            0.87            0.41            0.95   0.010
+cal=0.7 (larger)                 16            0.95            0.94            0.95            0.97   0.000
+cal=0.7 (larger)                 64            0.97            0.96            0.96            0.97   0.015
+cal=0.3 (smaller)                 4            0.50            0.44            0.10            0.89   0.020
+cal=0.3 (smaller)                16            0.74            0.49            0.22            0.96   0.025
+cal=0.3 (smaller)                64            0.66            0.63            0.14            0.96   0.035
+
+--- BRISC2025: failures (Dice<0.5) by group, w=64 and w=4 pooled over seeds
+w=4: size tercile 0: fail 0.131 (n=858); size tercile 1: fail 0.058 (n=861); size tercile 2: fail 0.069 (n=861); share of failures in smallest tercile 0.51
+         glioma: fail 0.206 (n=762)
+     meningioma: fail 0.021 (n=918)
+      pituitary: fail 0.050 (n=900)
+w=64: size tercile 0: fail 0.091 (n=858); size tercile 1: fail 0.038 (n=861); size tercile 2: fail 0.037 (n=861); share of failures in smallest tercile 0.55
+         glioma: fail 0.139 (n=762)
+     meningioma: fail 0.013 (n=918)
+      pituitary: fail 0.028 (n=900)
+
+=== Kvasir-SEG  (tau=0.5, alpha=0.05; mean over 3 seeds; 200 splits)
+variant                          w             dhat           mc_mi          ent_fg          oracle   max pop-viol
+base: delta=0.1, 50 pts, cal=0.5  4            0.05            0.02            0.14            0.78   0.015
+base: delta=0.1, 50 pts, cal=0.5 16            0.37            0.36            0.52            0.90   0.020
+base: delta=0.1, 50 pts, cal=0.5 64            0.36            0.26            0.46            0.69   0.015
+delta=0.05                        4            0.03            0.00            0.10            0.46   0.005
+delta=0.05                       16            0.27            0.19            0.20            0.58   0.005
+delta=0.05                       64            0.19            0.07            0.07            0.46   0.005
+grid 25 pts                       4            0.05            0.02            0.14            0.78   0.010
+grid 25 pts                      16            0.37            0.37            0.52            0.89   0.010
+grid 25 pts                      64            0.36            0.27            0.45            0.68   0.010
+grid 100 pts                      4            0.05            0.02            0.14            0.79   0.030
+grid 100 pts                     16            0.37            0.37            0.51            0.90   0.010
+grid 100 pts                     64            0.35            0.26            0.46            0.70   0.025
+cal=0.7 (larger)                  4            0.09            0.01            0.25            0.79   0.005
+cal=0.7 (larger)                 16            0.72            0.58            0.78            0.90   0.000
+cal=0.7 (larger)                 64            0.67            0.38            0.61            0.91   0.010
+cal=0.3 (smaller)                 4            0.01            0.00            0.01            0.04   0.005
+cal=0.3 (smaller)                16            0.04            0.05            0.01            0.13   0.005
+cal=0.3 (smaller)                64            0.01            0.00            0.00            0.02   0.000
+
+--- Kvasir-SEG: failures (Dice<0.5) by group, w=64 and w=4 pooled over seeds
+w=4: size tercile 0: fail 0.408 (n=348); size tercile 1: fail 0.125 (n=351); size tercile 2: fail 0.137 (n=351); share of failures in smallest tercile 0.61
+          polyp: fail 0.223 (n=1050)
+w=64: size tercile 0: fail 0.170 (n=348); size tercile 1: fail 0.031 (n=351); size tercile 2: fail 0.080 (n=351); share of failures in smallest tercile 0.60
+          polyp: fail 0.093 (n=1050)

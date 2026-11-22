@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.pt
+*.npz
+cache/
+data/
+downloads/
+datasets/
+logs/
+outputs_smoke/
+results_smoke/
+paper_assets/
