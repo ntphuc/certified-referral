@@ -11,3 +11,6 @@ logs/
 outputs_smoke/
 results_smoke/
 paper_assets/
+
+# ~/.gitignore_global ignores "outputs"; these per-image results belong in the repo
+!outputs/
