@@ -53,6 +53,14 @@ DATA_ROOT=/path/to/brisc2025 IDX=0 bash RUN.sh                 # one width/seed 
 DATASET=kvasir DATA_ROOT=/path/to/kvasir-seg IDX=0 bash RUN.sh
 ```
 
+Training details (defaults in `train_eval.py`): plain 2D U-Net, depth 4, BatchNorm + ReLU,
+decoder Dropout2d 0.1; loss 0.5 BCE + 0.5 soft Dice; AdamW (lr 1e-3, weight decay 1e-4) with
+OneCycle (5% warm-up); batch 16; up to 60 epochs, early stopping on validation Dice with
+patience 15; input 256x256; augmentation: horizontal flip (p 0.5), vertical flip (p 0.25),
+90-degree rotation (p 0.35), brightness/contrast jitter (p 0.3). Seeds 2026, 2027, 2028.
+Scores: temperature fitted on validation pixels (81-point log grid over [0.25, 4]); region =
+prediction or p > 0.25, dilated by 5 px; 10 MC-Dropout passes; 3 flips for TTA.
+
 The `*.slurm` files are the array jobs we used; their `--account`, `--partition` and `--gres`
 lines are specific to our cluster and must be edited for yours.
 
